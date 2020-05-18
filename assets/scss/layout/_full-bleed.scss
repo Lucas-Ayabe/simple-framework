@@ -1,0 +1,10 @@
+/**
+ * full bleed is a wrapper that must be used inside a container so that the 
+ * content involved extends beyond the limits and occupies 100% of the 
+ * horizontal space of the screen.
+ * 
+ */
+.o-full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}

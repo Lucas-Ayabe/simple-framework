@@ -1,0 +1,85 @@
+/*
+ * The UI field component, includes a label, input, helper messages and icons.
+ * 
+ */
+.c-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+  @include min-width(getBreakpoint("sm")) {
+    justify-content: flex-start;
+  }
+
+  &__label,
+  &__input {
+    font-size: $font-base;
+  }
+
+  &__label {
+    width: 100%;
+  }
+
+  &__input {
+    width: calc(100% - 30px);
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: $radius-2;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: $shadow-1;
+    }
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: $shadow-2;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 24px;
+    height: 24px;
+    margin-left: 6px;
+
+    & + .c-field__message {
+      max-width: calc(100% - 80px);
+    }
+
+    & + .c-field__message + .c-field__message {
+      margin-right: 30px;
+    }
+  }
+
+  &__message {
+    font-size: $font-1;
+    margin-right: auto;
+    max-width: calc(100% - 50px);
+
+    & + & {
+      max-width: 41px;
+      margin-right: 0;
+      margin-left: auto;
+      align-self: start;
+    }
+  }
+
+  &.-success {
+    color: $success;
+
+    .c-field__input {
+      border-color: $success;
+    }
+  }
+
+  &.-danger {
+    color: $danger;
+
+    .c-field__input {
+      border-color: $danger;
+    }
+  }
+}

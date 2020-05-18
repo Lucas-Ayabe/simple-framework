@@ -1,0 +1,31 @@
+/**
+ * Is a default title style, titles are great to highlight a text from the 
+ * others and create visual hierarchy. Can some varaitions: 
+ *  - small
+ *  - medium(default)
+ *  - large
+ *
+ *
+ * Other notes: if you are looking for subtitles see in the file 
+ * components/_subtitle.scss.
+ */
+.c-title {
+  font-size: $font-4;
+  font-weight: normal;
+
+  &.-smallest {
+    font-size: $font-3 * 0.75;
+  }
+
+  &.-small {
+    font-size: $font-3;
+  }
+
+  &.-large {
+    font-size: $font-5;
+  }
+
+  &.-strong {
+    font-weight: bold;
+  }
+}

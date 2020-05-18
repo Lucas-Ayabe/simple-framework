@@ -1,0 +1,37 @@
+/**
+ * media is a wrapper that is used to position an image and a content 
+ * horizontally. Can be used:
+ * - aligning the image to the left and the content on right;
+ * - (reverse) aligning the image to the right and the content on left;
+ * - (default)aligning the image at the top in relation to the content;
+ * - (center)aligning the image at the center in relation to the content;
+ * - (bottom)aligning the image at the bottom in relation to the content;
+ * 
+ */
+.o-media {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  flex-wrap: wrap;
+
+  &.-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.-center {
+    align-items: center;
+  }
+
+  &.-bottom {
+    align-items: flex-end;
+  }
+
+  &__figure {
+    margin-right: $space-1;
+    max-width: 100%;
+  }
+
+  &__body {
+    flex: 1;
+  }
+}

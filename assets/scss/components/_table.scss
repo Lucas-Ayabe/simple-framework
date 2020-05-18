@@ -1,0 +1,84 @@
+/*
+ * is a component to place bidimensional data. The following elements are 
+ * optional:
+ * - c-table__header
+ * - c-table__body
+ * - c-table__footer
+ * 
+ * A table of contents must have at least following elements:
+ * - .c-table
+ * - .c-table__row
+ * - .c-table__title
+ * - .c-table__cell
+ *
+ */
+.c-table {
+  display: table;
+  border-collapse: collapse;
+  background: $white;
+  width: 100%;
+
+  &__header {
+    display: table-header-group;
+  }
+
+  &__body {
+    display: table-row-group;
+  }
+
+  &__footer {
+    display: table-footer-group;
+  }
+
+  &__row {
+    border-bottom: 1px solid #ddd;
+  }
+
+  &__title,
+  &__cell {
+    text-align: center;
+    display: table-cell;
+    padding: $space-1 $space-2;
+
+    &.-left {
+      text-align: left;
+    }
+
+    &.-right {
+      text-align: right;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &.-stripped {
+    .c-table__row {
+      border-color: #eee;
+    }
+
+    .c-table__body .c-table__row:nth-child(odd) {
+      background: #eee;
+    }
+
+    .c-table__footer {
+      background: #eee;
+    }
+  }
+
+  &.-stripped-inverted {
+    .c-table__row {
+      border-color: #eee;
+    }
+
+    .c-table__body .c-table__row:nth-child(even) {
+      background: #eee;
+    }
+
+    .c-table__footer {
+      background: #eee;
+    }
+  }
+}

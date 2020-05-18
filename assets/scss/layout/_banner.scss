@@ -1,0 +1,10 @@
+.o-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+
+  &.-hero {
+    min-height: 100vh;
+  }
+}

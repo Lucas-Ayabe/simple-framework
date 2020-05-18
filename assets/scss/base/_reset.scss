@@ -1,0 +1,61 @@
+/**
+ * Sets a series of default values for generic elements such as:
+ * 1.  base font-size.
+ * 2.  no browser paddings and margins. 
+ * 3.  defining the box-sizing to border-box which is best suited for 
+ *     responsive styles
+ * 4.  default content to after and before pseudo-elements.
+ * 5.  default font-family.
+ * 
+ */
+:root {
+  font-size: 16px; /* [1] */
+}
+
+*,
+*::before,
+*::after {
+  /* [2] */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* [3] */
+}
+
+*::before,
+*::after {
+  content: ""; /* [4] */
+}
+
+html,
+body {
+  font-family: $family; /* [5] */
+}
+
+body {
+  overflow-x: hidden;
+  color: $dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+p,
+li,
+dd,
+a {
+  font-size: $font-2;
+}
+
+p {
+  line-height: 1.4;
+}

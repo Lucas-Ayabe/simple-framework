@@ -1,0 +1,48 @@
+/**
+ * section is a wrapper that is used to create a vertical spacing to a content.
+ * Can be used in some variations:
+ * - (no-top) without the top spacing
+ * - (no-bottom) without the bottom spacing
+ * - (small) small spacing
+ * - (default) medium spacing
+ * - (large) large spacing
+ *
+ */
+.o-section {
+  padding-top: $space-4;
+  padding-bottom: $space-4;
+
+  &.-no-top {
+    padding-top: 0;
+  }
+
+  &.-no-bottom {
+    padding-bottom: 0;
+  }
+
+  &--small {
+    padding-top: $space-3;
+    padding-bottom: $space-3;
+
+    &.-no-top {
+      padding-top: 0;
+    }
+
+    &.-no-bottom {
+      padding-bottom: 0;
+    }
+  }
+
+  &--large {
+    padding-top: $space-5;
+    padding-bottom: $space-5;
+
+    &.-no-top {
+      padding-top: 0;
+    }
+
+    &.-no-bottom {
+      padding-bottom: 0;
+    }
+  }
+}

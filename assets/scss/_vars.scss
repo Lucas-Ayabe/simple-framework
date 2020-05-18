@@ -1,0 +1,257 @@
+///
+///  The variables to custom the framework.
+///
+///  CONTENTS
+///
+///  BASE VARIABLES
+///
+///  COLORS
+///  $primary...............The primary color.
+///  $primary-light.........The light variation of the primary color.
+///  $primary-lighter.......The lighter variation of the primary color.
+///  $primary-lightest......The lightest variation of the primary color.
+///  $primary-dark..........The dark variation of the primary color.
+///  $primary-darker........The darker variation of the primary color.
+///  $primary-darkest.......The darkest variation of the primary color.
+///  $success...............The success actions color.
+///  $warning...............The warning actions color.
+///  $danger................The danger actions color.
+///  $info..................The info actions color.
+///  $light.................The light neutral color.
+///  $lighter...............The lighter neutral color.
+///  $lightest..............The lightest neutral color.
+///  $white.................The white used in the mix function to lighten a color.
+///  $dark..................The dark neutral color.
+///  $darker................The darker neutral color.
+///  $darkest...............The darkest neutral color.
+///  $black.................The black used in the mix function to darken a color.
+///  $gradient-1............Some gradient slot.
+///  $gradient-2............Some gradient slot.
+///  $gradient-3............Some gradient slot.
+///  $colors................An array with colors without their light and dark
+///                         variations
+///  $color-shades.........An array with the light and dark variations of the
+///                         colors array.
+///  $full-colors...........The merged array of the $colors and $color-shades
+///                         arrays.
+///  $gradients.............An array with the gradients variables.
+///  TYPOGRAPHY
+///  $family................The font-family used.
+///  $font-1................The small font-size.
+///  $font-base.............The base font-size.
+///  $font-2................The text font-size.
+///  $font-3................The smaller titles font-size.
+///  $font-4................The normal titles font-size.
+///  $font-5................The large titles font-size.
+///  $font-6................The larger titles font-size.
+///  $font-sizes............An array with all font-sizes.
+///  SPACE
+///  $space-0...............No space.
+///  $space-1...............Space size 1.
+///  $space-2...............Space size 2.
+///  $space-3...............Space size 3.
+///  $space-4...............Space size 4.
+///  $space-5...............Space size 5.
+///  $space-6...............Space size 6.
+///  $gap...................The space of the grid gap.
+///  $spaces................An array with all spaces.
+///  GRID
+///  $columns...............The number of columns of the grid.
+///  $breakpoint-xsm........The value of the smaller breakpoint.
+///  $breakpoint-sm.........The value of the small breakpoint.
+///  $breakpoint-md.........The value of the medium breakpoint.
+///  $breakpoint-lg.........The value of the large breakpoint.
+///  $breakpoint-xlg........The value of the larger breakpoint.
+///  $breakpoints...........An array with all breakpoints.
+///  $container-sizes.......An array with all max-widths of the container
+///                         object per breakpoint.
+///  RADIUS
+///  $radius-1..............The most smaller border-radius.
+///  $radius-2..............The smaller border-radius.
+///  $radius-3..............The bigger border-radius.
+///  $radius-4..............The most bigger border-radius.
+///  $circle................50% of border-radius.
+///  $radius................An array with all radius variables.
+///  SHADOWS
+///  $shadow-1..............A most smaller shadow.
+///  $shadow-2..............A smaller shadow.
+///  $shadow-3..............A bigger shadow.
+///  $shadow-4..............A most bigger sahdow.
+///  $shadows...............An array with all shadow variables.
+///  COMPONENTS CONFIG
+///
+///  EMBEDS
+///  $aspect-ratios.........An array with all aspect ratios to generate the
+///                         embed objects.
+///  FLOW-OBJECT
+///  $flow-space............the space value of the vertical flow rhythm.
+
+// Base variables
+
+// Colors
+$primary-lightest: #aee0ef;
+$primary-lighter: #7acbe5;
+$primary-light: #46b7db;
+$primary: #1488d6;
+$primary-dark: #009ad1;
+$primary-darker: #008dc4;
+$primary-darkest: #007bb2;
+
+$success: #28a745;
+$danger: #ff3920;
+$warning: #ffff26;
+$info: #0eecbc;
+
+$dark: #021115;
+$darker: #010a0d;
+$darkest: #010708;
+$black: #000;
+
+$light: #eff7fb;
+$lighter: #f3f9fc;
+$lightest: #f7fcfc;
+$white: #fff;
+
+$gradient-1: linear-gradient(130deg, #13ffff, #3ba3ff, #9c00ff);
+$gradient-2: linear-gradient(130deg, #006fff, #00e5e5, #0bff96);
+$gradient-3: linear-gradient(#ec038b, #fb6468, #fbb936);
+
+$colors: (
+  "primary": $primary,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "info": $info,
+  "dark": $dark,
+  "light": $light,
+  "black": $black,
+  "white": $white,
+);
+
+$color-shades: (
+  "primary-light": $primary-light,
+  "primary-lighter": $primary-lighter,
+  "primary-lightest": $primary-lightest,
+  "primary-dark": $primary-dark,
+  "primary-darker": $primary-darker,
+  "primary-darkest": $primary-darkest,
+  "lighter": $lighter,
+  "lightest": $lightest,
+  "darker": $darker,
+  "darkest": $darkest,
+);
+
+$full-colors: map-merge(
+  $map1: $colors,
+  $map2: $color-shades,
+);
+
+$gradients: (
+  "gradient-1": $gradient-1,
+  "gradient-2": $gradient-2,
+  "gradient-3": $gradient-3,
+);
+
+// Typography
+$family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+  Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+$font-1: 0.707em;
+$font-base: 16px * 1.125;
+$font-2: 1.404em;
+$font-3: 1.999em;
+$font-4: 2.827em;
+$font-5: 3.998em;
+$font-6: 5.653em;
+
+$font-sizes: (
+  "font-base": $font-base,
+  "font-1": $font-1,
+  "font-2": $font-2,
+  "font-3": $font-3,
+  "font-4": $font-4,
+  "font-5": $font-5,
+  "font-6": $font-6,
+);
+
+// Space
+$space-0: 0;
+$space-1: 0.625rem;
+$space-2: 1.25rem;
+$space-3: 2rem;
+$space-4: 4rem;
+$space-5: 8rem;
+$space-6: 16rem;
+$gap: $space-2;
+
+$spaces: (
+  "0": 0,
+  "1": $space-1,
+  "2": $space-2,
+  "3": $space-3,
+  "4": $space-4,
+  "5": $space-5,
+  "6": $space-6,
+  "gap": $gap,
+);
+
+// Grid
+$columns: 12;
+
+$breakpoint-xsm: 480px;
+$breakpoint-sm: 568px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 960px;
+$breakpoint-xlg: 1200px;
+
+$breakpoints: (
+  "xsm": $breakpoint-xsm,
+  "sm": $breakpoint-sm,
+  "md": $breakpoint-md,
+  "lg": $breakpoint-lg,
+  "xlg": $breakpoint-xlg,
+);
+
+$container-sizes: (
+  xsm: 460px,
+  sm: 540px,
+  md: 720px,
+  lg: 928px,
+  xlg: 992px,
+);
+
+// Radius
+$radius-1: 3px;
+$radius-2: 4px;
+$radius-3: 10px;
+$radius-4: 25px;
+$circle: 50%;
+
+$radius: (
+  "1": $radius-1,
+  "2": $radius-2,
+  "3": $radius-3,
+  "4": $radius-4,
+  "circle": $circle,
+);
+
+// Shadows
+$shadow-1: 0 3px 6px rgba(10, 10, 10, 0.15);
+$shadow-2: 0 4px 8px rgba(10, 10, 10, 0.15), 0 5px 10px rgba(20, 20, 20, 0.05);
+$shadow-3: 0 8px 16px getRgba(#777, 0.2);
+$shadow-4: 0 20px 40px getRgba(#777, 0.2);
+
+$shadows: (
+  "shadow-1": $shadow-1,
+  "shadow-2": $shadow-2,
+  "shadow-3": $shadow-3,
+  "shadow-4": $shadow-4,
+);
+
+// COMPONENTS CONFIG
+
+// Embeds
+$aspect-ratios: ((21 9), (16 9), (4 3), (1 1));
+
+// Flow object
+$flow-space: 1em;

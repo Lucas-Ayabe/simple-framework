@@ -1,0 +1,93 @@
+/**
+ * The core file of the framework, here are where all the imports occours.
+ *  
+ * CONTENTS
+ * 
+ * CONFIG
+ * functions.......Useful functions.
+ * mixins..........Useful mixins.
+ * vars............Variables for colos, typography, spaces, reponsive, radius,
+ *                 shadows and aspect ratios.
+ * 
+ * BASE
+ * reset...........Set some default styles to some elements.
+ * 
+ * LAYOUT
+ * All the classes in this category has a .o- (object) namespace class.
+ *
+ * container.......Styles to the contaienr component.
+ * flow............Styles to uniform vertical spacement.
+ * full-bleed......effect in which the element occupies 100% of the viewport 
+ *                 inside a container.
+ * grid............Styles for the grid system.
+ * media...........Styles to the media object component.
+ * page............Styles to a fluid layout or the sticky footer technic.
+ * section.........Good spaced vertical wrappers.
+ * 
+ * ABSTRACT COMPONENTS
+ * All the classes in this category has a .a- (abstract) namespace class. The
+ * abstract classes are classes that serve as a basis for other components and
+ * therefore care should be taken when changing them and, if possible, not 
+ * doing so. Its concrete use is discouraged by this documentation.
+ * 
+ * box.............Simple container that serve as basis for the following
+ *                 components:
+ *                 - card
+ *                 - form                 
+ *
+ * COMPONENTS
+ * All the classes in this category has a .c- (component) namespace class.
+ *
+ * bloquote........Bloquote styles.
+ * button..........Buttons and their variations.
+ * card............Card component styles.
+ * field...........Field component styles.
+ * form............Form component styles.
+ * subtitle........Subtitles and their variations.
+ * table...........Tables and their variations.
+ * title...........Titles and their variations.
+ *
+ * UTILITIES
+ * All the classes in this category has a .u- (utilitie) namespace class.
+ * colors..........Utilities for colors, like text-color utilities and 
+ *                 background-color utilities.
+ * 
+ * PLUGINS
+ * All the styles in this category are destined to custom styles to 3rd-party
+ * plugins.
+ * 
+ * Note: Comments must have to be a maximum of 80 characters. 
+ */
+
+///  Notes: SCSS only comments are /// plus 2 spaces and Global comments are
+///         following the structure above.
+///
+///
+
+@import "./functions";
+@import "./mixins";
+@import "./vars";
+@import "./base/reset";
+
+@import "./layout/banner";
+@import "./layout/container";
+@import "./layout/flow";
+@import "./layout/full-bleed";
+@import "./layout/grid";
+@import "./layout/media";
+@import "./layout/page";
+@import "./layout/section";
+@import "./layout/table-wrapper";
+
+@import "./components/abstract/box";
+
+@import "./components/bloquote";
+@import "./components/button";
+@import "./components/card";
+@import "./components/form";
+@import "./components/field";
+@import "./components/subtitle";
+@import "./components/table";
+@import "./components/title";
+
+@import "./utils/colors";

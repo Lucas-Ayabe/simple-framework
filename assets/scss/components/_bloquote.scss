@@ -1,0 +1,11 @@
+/**
+ * Is a component that specifies a section that is quoted from another source.
+ */
+.c-bloquote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $space-2 $space-3;
+  text-align: center;
+  font-style: italic;
+}

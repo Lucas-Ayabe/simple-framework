@@ -1,0 +1,141 @@
+/**
+ * A generic button in the ui. Can have so much variations such as:
+ * - color variations.
+ * - size variations.
+ * - full rounded(.rounded) and rounded(.rounded-corners) corners variations.
+ * - text button variations
+ * - ghost button variations(outlined)
+ * - semi button variations(lighter background) 
+ * - raised button variations
+ */
+
+///  Notes: the functions were used:
+///         - getContrastYIQ, more info in _functions.scss
+///         - getRgba, more info in _mixins.scss
+///         - mix, a function used to blend two colors, used to darken and
+///          lighten the colors in this file.
+///
+///
+.c-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-family: $family;
+  font-size: $font-base;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.625rem 1.25rem;
+  transition: all 0.3s ease-in-out;
+
+  &.-small {
+    padding: 0.5rem 1rem;
+  }
+
+  &.-large {
+    padding: 0.75rem 1.5rem;
+  }
+
+  &.-rounded-corners {
+    border-radius: $radius-1;
+  }
+
+  &.-rounded {
+    border-radius: 100px;
+  }
+
+  @each $name, $color in $colors {
+    &.-#{$name} {
+      background-color: $color;
+      color: getContrastYIQ($color);
+
+      &:hover {
+        background-color: mix(#fff, $color, 25%);
+      }
+
+      &:active {
+        background-color: mix(#fff, $color, 40%);
+      }
+    }
+  }
+
+  &.-ghost,
+  &.-text,
+  &.-semi {
+    background: transparent;
+    @each $name, $color in $colors {
+      &.-#{$name} {
+        color: $color;
+      }
+    }
+  }
+
+  &.-ghost {
+    border: 1px solid currentColor;
+
+    @each $name, $color in $colors {
+      &.-#{$name}:hover {
+        background-color: $color;
+        color: getContrastYIQ($color);
+        border-color: transparent;
+      }
+
+      &.-#{$name}:focus {
+        background-color: getRgba($color, 0.12);
+        color: mix($black, $color, 30%);
+      }
+
+      &.-#{$name}:active {
+        background-color: mix(#fff, $color, 25%);
+      }
+    }
+  }
+
+  &.-raised {
+    @each $name, $color in $colors {
+      &.-#{$name} {
+        box-shadow: 0 2px 4px getRgba($color, 0.3);
+      }
+
+      &.-#{$name}:hover,
+      &.-#{$name}:focus {
+        box-shadow: 0 4px 8px getRgba($color, 0.3);
+      }
+
+      &.-#{$name}:active {
+        box-shadow: 0 7px 14px getRgba($color, 0.3);
+      }
+    }
+  }
+
+  &.-semi,
+  &.-text:hover {
+    @each $name, $color in $colors {
+      &.-#{$name} {
+        background-color: getRgba($color, 0.12);
+        color: mix($black, $color, 30%);
+      }
+    }
+  }
+
+  &.-semi:hover {
+    @each $name, $color in $colors {
+      &.-#{$name} {
+        background-color: getRgba($color, 0.25);
+      }
+    }
+  }
+
+  &.-semi:active,
+  &.-text:active {
+    @each $name, $color in $colors {
+      &.-#{$name} {
+        background-color: $color;
+        color: getContrastYIQ($color);
+      }
+    }
+  }
+}

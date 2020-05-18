@@ -1,0 +1,14 @@
+/*
+ * A container to fields, that represents a HTML form.
+ */
+.c-form {
+  @extend .a-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include min-width(getBreakpoint("sm")) {
+    align-items: flex-start;
+  }
+}

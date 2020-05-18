@@ -1,0 +1,96 @@
+/*
+ * Card is a component that represents a self contained content piece. Can have
+ * a so much of variations like:
+ * - flat(default)
+ * - rounded(.-rounded)
+ * - stacked(.-stacked) - the top image is raised
+ * - raised(.-raised)
+ * - colors: 
+ *   - the same color of the $colors array, more info in _vars.scss file.
+ * 
+ * IMPORTANT: this component extends the abstract component box located in the
+ *            file components/abstract/_box.scss.
+ * 
+ * FOOTER NOTES:
+ * 1. Creates an image that occupies 100% of the card's horizontal space. 
+ * 2. To make the image occupy 100% of the card's horizontal space, 100% is 
+ *    added with 2 times the padding plus 4px pixels to correct a visual gap.
+ * 3. To center the image, use the margin-left with the negative padding value 
+ *    to paste the image on an edge, since the image has the width of the card.
+ * 4. To make the image "float" onto the card, position: absolute is used to 
+ *    center the image in the card and go up a little.
+ * 5. Because position: absolute the image doesn't occupies space, then to fix
+ *    this a padding-top is used with the half of the image height.
+ * 6. to prevent the image from overlapping elements that are above the card, a 
+ *    margin-top half the size of the image is used.
+ */
+
+.c-card {
+  @extend .a-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  &__figure {
+    position: relative;
+  }
+
+  &__image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+    &.-rounded {
+      border-radius: $radius-2;
+    }
+
+    &.-top {
+      border-radius: $radius-2 $radius-2 0 0;
+    }
+
+    /* [1] */
+    &.-full-bleed {
+      max-width: initial;
+      width: calc(100% + 2.25rem + 4px); /* [2] */
+      margin-left: calc(-1.125rem - 2px); /* [3] */
+    }
+  }
+
+  &__body {
+    padding: $space-1 $space-2;
+
+    &.-large {
+      padding: $space-2;
+    }
+  }
+
+  & .c-subtitle {
+    margin-bottom: $space-2/2;
+  }
+
+  &__text {
+    font-size: $font-base;
+    margin-top: $flow-space / 2;
+    margin-bottom: $flow-space / 2;
+  }
+
+  &.-stacked {
+    /* [6] */
+    margin-top: calc(150px / 2);
+    & > .c-card__figure {
+      /* [5] */
+      padding-top: calc(150px / 2);
+
+      & > .c-card__image {
+        /* [4] */
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        width: 85%;
+        height: 150px;
+        box-shadow: $shadow-3;
+      }
+    }
+  }
+}

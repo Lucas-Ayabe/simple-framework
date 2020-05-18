@@ -1,0 +1,21 @@
+/**
+ * The .o-page class is a layout class that serves to creates the sticky
+ * footer effect.
+ * 
+ * 1. Uses the display: flex to make the layout fluid, sets the flex-direction
+ *    to column to follow the default page flow and min-height: 100vh to ensure
+ *    that effect is going to be okay.
+ * 2. Turns the height to the .o-page__main class fluid based on the avaliable
+ *    space.  
+ * 
+ */
+.o-page {
+  /* [1] */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__main {
+    flex: 1; /* [2] */
+  }
+}

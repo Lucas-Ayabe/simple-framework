@@ -1,0 +1,29 @@
+/*
+ * A collection of color utilities. The list of utilities in this file:
+ * - text-color
+ * - background-color
+ * - gradient-color
+ */
+.u-text {
+  @each $name, $color in $colors {
+    &-#{$name} {
+      color: $color;
+    }
+  }
+}
+
+.u-background {
+  @each $name, $color in $colors {
+    &-#{$name} {
+      background-color: $color;
+    }
+  }
+}
+
+.u {
+  @each $name, $gradient in $gradients {
+    &-#{$name} {
+      background-image: $gradient;
+    }
+  }
+}

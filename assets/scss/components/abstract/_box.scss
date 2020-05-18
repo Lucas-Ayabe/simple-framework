@@ -1,0 +1,32 @@
+.a-box {
+  padding: $space-2;
+  border: 1px solid #eee;
+
+  &.-center {
+    text-align: center;
+  }
+  &.-right {
+    text-align: right;
+  }
+
+  &.-rounded {
+    border-radius: $radius-2;
+  }
+
+  &.-raised {
+    box-shadow: $shadow-3;
+  }
+
+  @each $name, $color in $colors {
+    &.-#{$name} {
+      background: $color;
+      border-color: $color;
+      color: getContrastYIQ($color);
+    }
+  }
+
+  &.-white,
+  &.-black {
+    border-color: #eee;
+  }
+}
