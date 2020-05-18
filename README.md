@@ -159,3 +159,7 @@ All the styles in this category are destined to custom styles to 3rd-party
 plugins.
 
 Note: Comments must have to be a maximum of 80 characters.
+
+## Tools
+
+Builded with [parcel](https://parceljs.org/)
